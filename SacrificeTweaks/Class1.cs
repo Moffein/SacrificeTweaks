@@ -15,7 +15,7 @@ namespace R2API.Utils
 
 namespace SacrificeTweaks
 {
-    [BepInPlugin("com.Moffein.SacrificeTweaks", "Sacrifice Tweaks", "1.1.0")]
+    [BepInPlugin("com.Moffein.SacrificeTweaks", "Sacrifice Tweaks", "1.1.1")]
     public class SacrificeTweaks : BaseUnityPlugin
     {
         public void Awake()
@@ -48,7 +48,20 @@ namespace SacrificeTweaks
                     float finalDropChance = orig;
                     bool swarmsEnabled = RunArtifactManager.instance.IsArtifactEnabled(RoR2Content.Artifacts.swarmsArtifactDef);
 
-                    float maxChance = swarmsEnabled ? maxSwarmDropChance : maxBaseDropChance;
+                    float baseChance = baseDropChance;
+                    float maxChance = maxBaseDropChance;
+
+                    if (swarmsEnabled)
+                    {
+                        baseChance = swarmDropChance;
+                        maxChance = maxSwarmDropChance;
+                    }
+
+                    if (finalDropChance < baseChance)
+                    {
+                        finalDropChance = baseChance;
+                    }
+
                     if (finalDropChance > maxChance)
                     {
                         finalDropChance = maxChance;
