@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SacrificeTweaks", "SacrificeTweaks\SacrificeTweaks.csproj", "{A65B4303-FE94-4D5B-91A6-A7CE6A31BBBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A65B4303-FE94-4D5B-91A6-A7CE6A31BBBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65B4303-FE94-4D5B-91A6-A7CE6A31BBBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65B4303-FE94-4D5B-91A6-A7CE6A31BBBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65B4303-FE94-4D5B-91A6-A7CE6A31BBBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {705C2733-018D-4690-B478-E9F4A24657DC}
+	EndGlobalSection
+EndGlobal
