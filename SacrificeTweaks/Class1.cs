@@ -15,7 +15,7 @@ namespace R2API.Utils
 
 namespace SacrificeTweaks
 {
-    [BepInPlugin("com.Moffein.SacrificeTweaks", "Sacrifice Tweaks", "1.1.1")]
+    [BepInPlugin("com.Moffein.SacrificeTweaks", "Sacrifice Tweaks", "1.1.2")]
     public class SacrificeTweaks : BaseUnityPlugin
     {
         public void Awake()
@@ -46,25 +46,29 @@ namespace SacrificeTweaks
                 c.EmitDelegate<Func<float, float>>(orig =>
                 {
                     float finalDropChance = orig;
-                    bool swarmsEnabled = RunArtifactManager.instance.IsArtifactEnabled(RoR2Content.Artifacts.swarmsArtifactDef);
 
-                    float baseChance = baseDropChance;
-                    float maxChance = maxBaseDropChance;
-
-                    if (swarmsEnabled)
+                    if (orig > 0f)
                     {
-                        baseChance = swarmDropChance;
-                        maxChance = maxSwarmDropChance;
-                    }
+                        bool swarmsEnabled = RunArtifactManager.instance.IsArtifactEnabled(RoR2Content.Artifacts.swarmsArtifactDef);
 
-                    if (finalDropChance < baseChance)
-                    {
-                        finalDropChance = baseChance;
-                    }
+                        float baseChance = baseDropChance;
+                        float maxChance = maxBaseDropChance;
 
-                    if (finalDropChance > maxChance)
-                    {
-                        finalDropChance = maxChance;
+                        if (swarmsEnabled)
+                        {
+                            baseChance = swarmDropChance;
+                            maxChance = maxSwarmDropChance;
+                        }
+
+                        if (finalDropChance < baseChance)
+                        {
+                            finalDropChance = baseChance;
+                        }
+
+                        if (finalDropChance > maxChance)
+                        {
+                            finalDropChance = maxChance;
+                        }
                     }
 
                     return finalDropChance;
