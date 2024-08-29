@@ -15,7 +15,7 @@ namespace R2API.Utils
 
 namespace SacrificeTweaks
 {
-    [BepInPlugin("com.Moffein.SacrificeTweaks", "Sacrifice Tweaks", "1.1.4s")]
+    [BepInPlugin("com.Moffein.SacrificeTweaks", "Sacrifice Tweaks", "1.1.5")]
     public class SacrificeTweaks : BaseUnityPlugin
     {
         public void Awake()
